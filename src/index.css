@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#060912] text-slate-200 antialiased min-h-screen;
+    background-image: 
+      radial-gradient(ellipse at 20% 10%, rgba(0, 240, 255, 0.04) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(59, 130, 246, 0.04) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(9, 13, 22, 1) 0%, rgba(5, 7, 14, 1) 100%);
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #090D16;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1C2642;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00F0FF;
+  }
+}
+
+@layer components {
+  /* Glassmorphism Cards */
+  .glass-card {
+    @apply bg-[#0D1322]/70 backdrop-blur-md border border-slate-800/80 rounded-xl transition-all duration-200 hover:border-slate-700/80 shadow-glass;
+  }
+  
+  .glass-card-interactive {
+    @apply glass-card hover:border-neon-cyan/40 hover:shadow-neon-cyan/10 hover:-translate-y-0.5 cursor-pointer;
+  }
+
+  .glass-panel {
+    @apply bg-[#0A0E1A]/80 backdrop-blur-lg border border-slate-800/90 rounded-2xl;
+  }
+
+  /* Cyber Glow Borders */
+  .neon-border-cyan {
+    @apply border border-neon-cyan/40 shadow-[0_0_15px_rgba(0,240,255,0.15)];
+  }
+
+  .neon-border-red {
+    @apply border border-neon-rose/50 shadow-[0_0_15px_rgba(244,63,94,0.2)];
+  }
+
+  .neon-border-amber {
+    @apply border border-neon-amber/50 shadow-[0_0_15px_rgba(245,158,11,0.2)];
+  }
+
+  .neon-border-green {
+    @apply border border-neon-emerald/50 shadow-[0_0_15px_rgba(16,185,129,0.2)];
+  }
+
+  .cyber-gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-neon-cyan via-blue-400 to-indigo-400;
+  }
+
+  .cyber-grid-bg {
+    background-size: 24px 24px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  }
+}
